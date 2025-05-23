@@ -1,23 +1,28 @@
+// scss/bootstrap.scss
 
-@import "../node_modules/bootstrap/scss/functions"; 
+// 1. Bootstrap functions
+@import "../node_modules/bootstrap/scss/functions";
 
-@import "bs-overrides";
-
+// 2. Bootstrap variables
 @import "../node_modules/bootstrap/scss/variables";
+
+// 3. Kendi özel değişken geçersiz kılmalarınız (Bootstrap'ın varsayılanlarını değiştirmek için)
+@import "bs-overrides"; // ARTIK DOĞRU SIRADA!
+
+// 4. Bootstrap mixins
 @import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/root";
 
-
-@import "../node_modules/bootstrap/scss/utilities";
+// 5. Bootstrap Root ve Diğer Temel Ayarlar
+@import "../node_modules/bootstrap/scss/root"; // `$theme-colors-rgb` burada tanımlanır
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/images";
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap/scss/utilities"; // Helpers'tan sonra veya burada da olabilir
 
-// Conpenetents
-// Bunları buraya eklerken ekstra olarak konumunu tam olarak yazmalıyız
+// Componentler (Bu sıranın genellikle bir önemi yoktur, ama bazıları diğerlerine bağlı olabilir)
 @import "../node_modules/bootstrap/scss/tables";
 @import "../node_modules/bootstrap/scss/forms";
 @import "../node_modules/bootstrap/scss/buttons";
@@ -44,7 +49,8 @@
 @import "../node_modules/bootstrap/scss/offcanvas";
 @import "../node_modules/bootstrap/scss/placeholders";
 
-
+// Bootstrap Utilities API (En son yüklenir)
 @import "../node_modules/bootstrap/scss/utilities/api";
 
-@import "styles"
+// Kendi özel stilleriniz (Bootstrap'tan sonra gelmeli ki Bootstrap'ın stillerini geçersiz kılsın)
+@import "styles"; // Bu dosyanızın adı 'styles.scss' ise doğru
